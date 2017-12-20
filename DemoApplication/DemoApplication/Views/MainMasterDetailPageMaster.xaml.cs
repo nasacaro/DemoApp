@@ -15,14 +15,14 @@ namespace DemoApplication.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainMasterDetailPageMaster : ContentPage
     {
-        public ListView ListView;
+        //public ListView ListView;
 
         public MainMasterDetailPageMaster()
         {
             InitializeComponent();
 
-            BindingContext = new MainMasterDetailPageMasterViewModel();
-            ListView = MenuItemsListView;
+            //BindingContext = new MainMasterDetailPageMasterViewModel();
+            //ListView = MenuItemsListView;
         }
 
         class MainMasterDetailPageMasterViewModel : INotifyPropertyChanged

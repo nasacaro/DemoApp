@@ -11,6 +11,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="logo.png" VerticalOptions="Center"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -18,9 +19,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand">
-
-                <renderer:LogInEntry Placeholder="Số thuê bao" PlaceholderColor="#C3C3C3" HorizontalOptions="FillAndExpand" Icon="username.png" BorderColor="Red"/>
-                <renderer:LogInEntry Placeholder="Mật khẩu" PlaceholderColor="#C3C3C3" HorizontalOptions="FillAndExpand" Icon="password.png" BorderColor="Gray" BorderThinkness="2"  IsPassword="True"/>
+                <renderer:LogInEntry Placeholder="Số thuê bao" PlaceholderColor="#C3C3C3" HorizontalOptions="FillAndExpand" Icon="username.png"/>
+                <renderer:LogInEntry Placeholder="Mật khẩu" PlaceholderColor="#C3C3C3" HorizontalOptions="FillAndExpand" Icon="password.png" IsPassword="True"/>
+                <Button HorizontalOptions="FillAndExpand" Text="Đăng nhập" BackgroundColor="#008ECC" TextColor="White" Margin="-3" Command="{Binding LogInCommand}"/>
             </StackLayout>
         </Grid>
     </Grid>

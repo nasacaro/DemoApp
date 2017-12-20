@@ -7,6 +7,9 @@ using System.Text;
 
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
+using XLabs.Forms.Services;
+using XLabs.Ioc;
+using XLabs.Platform.Services;
 
 namespace DemoApplication
 {
@@ -16,7 +19,12 @@ namespace DemoApplication
         {            
             InitializeComponent();
             RegisterViews();
-            MainPage = new NavigationPage((Page)ViewFactory.CreatePage<LogInViewModel, LogInPage>());
+            //var mainPage = new NavigationPage((Page)ViewFactory.CreatePage<LogInViewModel, LogInPage>());
+            var mainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>());
+            Resolver.Resolve<IDependencyContainer>().Register<INavigationService>(t => new NavigationService(mainPage.Navigation));
+            //container.Register<INavigation>();
+            Resolver.Resolve<IDependencyContainer>().Register<INavigation>(mainPage.Navigation);
+            MainPage = mainPage;
         }
 
         protected override void OnStart()

@@ -26,6 +26,7 @@ namespace DemoApplication.iOS
         {
             var container = new SimpleContainer();
             container.Register<IDevice>(t => AppleDevice.CurrentDevice);
+            container.Register<IDependencyContainer>(container);
             Resolver.SetResolver(container.GetResolver());
 
             global::Xamarin.Forms.Forms.Init();

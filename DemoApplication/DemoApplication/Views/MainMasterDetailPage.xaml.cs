@@ -15,7 +15,7 @@ namespace DemoApplication.Views
         public MainMasterDetailPage()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            //MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -30,7 +30,7 @@ namespace DemoApplication.Views
             Detail = new NavigationPage(page);
             IsPresented = false;
 
-            MasterPage.ListView.SelectedItem = null;
+            //MasterPage.ListView.SelectedItem = null;
         }
     }
 }

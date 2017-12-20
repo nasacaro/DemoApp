@@ -9,5 +9,9 @@ namespace DemoApplication.ViewModels
 {
     public class MainMasterDetailPageViewModel : ViewModel
     {
+        public MainMasterDetailPageViewModel()
+        {
+
+        }
     }
 }

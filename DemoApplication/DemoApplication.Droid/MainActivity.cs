@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
+using Xamarin.Forms;
 
 namespace DemoApplication.Droid
 {
@@ -23,6 +24,7 @@ namespace DemoApplication.Droid
 
             var container = new SimpleContainer();
             container.Register<IDevice>(t => AndroidDevice.CurrentDevice);
+            container.Register<IDependencyContainer>(container);             
             Resolver.SetResolver(container.GetResolver());
 
             global::Xamarin.Forms.Forms.Init(this, bundle);           

@@ -1,9 +1,13 @@
-﻿using System;
+﻿using DemoApplication.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
+using XLabs.Ioc;
+using XLabs.Platform.Services;
 
 namespace DemoApplication.ViewModels
 {
@@ -11,14 +15,35 @@ namespace DemoApplication.ViewModels
     {
         public LogInViewModel()
         {
-            Message = "Hello Tung";
+            logInCommand = new Command(DoLogIn);
         }
 
-        private string _message = "";
-        public string Message
+        private Command logInCommand;
+        public Command LogInCommand
         {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
+            get { return logInCommand; }
+            set { SetProperty(ref logInCommand, value); }
+        }
+
+        private async void DoLogIn(object obj)
+        {
+            try
+            {
+                //await Navigation.PopToRootAsync();
+                //await Navigation.PushAsync(new MainMasterDetailPage());
+                //NavigationService.NavigateTo<MainMasterDetailPageViewModel>();
+                
+                await Resolver.Resolve<INavigation>().PushAsync((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>(), false);
+                await Resolver.Resolve<INavigation>().PopAsync();
+
+
+                //Resolver.Resolve<INavigationService>().NavigateTo<MainMasterDetailPageViewModel>();
+            }
+            catch (Exception e)
+            {
+
+            }
+            
         }
     }
 }
