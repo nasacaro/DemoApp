@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApplication.Views.LogInPage"
+             BackgroundColor="#37C4FF"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:renderer="clr-namespace:DemoApplication;assembly=DemoApplication">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                <renderer:LogInEntry Placeholder="Số thuê bao" PlaceholderColor="#C3C3C3" HorizontalOptions="FillAndExpand" Icon="username.png" BorderColor="Red"/>
+                <renderer:LogInEntry Placeholder="Mật khẩu" PlaceholderColor="#C3C3C3" HorizontalOptions="FillAndExpand" Icon="password.png" BorderColor="Gray" BorderThinkness="2"  IsPassword="True"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
