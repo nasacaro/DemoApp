@@ -15,12 +15,15 @@ namespace DemoApplication
 {
     public partial class App : Application
     {
+        public static App CurrentApp;
+
         public App()
-        {            
+        {
+            CurrentApp = this;
             InitializeComponent();
             RegisterViews();
-            //var mainPage = new NavigationPage((Page)ViewFactory.CreatePage<LogInViewModel, LogInPage>());
-            var mainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>());
+            var mainPage = (Page)ViewFactory.CreatePage<LogInViewModel, LogInPage>();// NavigationPage((Page)ViewFactory.CreatePage<LogInViewModel, LogInPage>());
+            //var mainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>());
             Resolver.Resolve<IDependencyContainer>().Register<INavigationService>(t => new NavigationService(mainPage.Navigation));
             //container.Register<INavigation>();
             Resolver.Resolve<IDependencyContainer>().Register<INavigation>(mainPage.Navigation);
@@ -46,6 +49,9 @@ namespace DemoApplication
         {            
             ViewFactory.Register<LogInPage, LogInViewModel>();
             ViewFactory.Register<MainMasterDetailPage, MainMasterDetailPageViewModel>();
+            ViewFactory.Register<MainMasterDetailPageMaster, MainMasterDetailPageMasterViewModel>();
+            ViewFactory.Register<MainMasterDetailPageDetail, MainMasterDetailPageDetailViewModel>();
+
         }
     }
 }

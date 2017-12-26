@@ -38,6 +38,12 @@ namespace DemoApplication.Droid
 
             LoadApplication(new App());
         }
+
+        public override void OnBackPressed()
+        {
+            //kill app
+            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+        }
     }
 }
 

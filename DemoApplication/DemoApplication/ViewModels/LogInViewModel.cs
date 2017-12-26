@@ -32,12 +32,19 @@ namespace DemoApplication.ViewModels
                 //await Navigation.PopToRootAsync();
                 //await Navigation.PushAsync(new MainMasterDetailPage());
                 //NavigationService.NavigateTo<MainMasterDetailPageViewModel>();
-                
-                await Resolver.Resolve<INavigation>().PushAsync((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>(), false);
-                await Resolver.Resolve<INavigation>().PopAsync();
 
+                //await Resolver.Resolve<INavigation>().PopAsync();
+                //await Resolver.Resolve<INavigation>().PushAsync((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>(), true);
+
+                //await Navigation.PushModalAsync((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>());
 
                 //Resolver.Resolve<INavigationService>().NavigateTo<MainMasterDetailPageViewModel>();
+                //NavigationService.NavigateTo<MainMasterDetailPageViewModel>();
+
+                //Application.Current.MainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>());
+                //await Navigation.PopToRootAsync();
+                Application.Current.MainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainMasterDetailPageViewModel, MainMasterDetailPage>());
+
             }
             catch (Exception e)
             {

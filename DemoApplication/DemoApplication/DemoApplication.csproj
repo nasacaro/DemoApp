@@ -44,6 +44,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\LogInEntry.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
+    <Compile Include="ViewModels\MainMasterDetailPageDetailViewModel.cs" />
+    <Compile Include="ViewModels\MainMasterDetailPageMasterViewModel.cs" />
     <Compile Include="ViewModels\MainMasterDetailPageViewModel.cs" />
     <Compile Include="Views\LogInPage.xaml.cs">
       <DependentUpon>LogInPage.xaml</DependentUpon>

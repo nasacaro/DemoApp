@@ -2,15 +2,18 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DemoApplication.Views.MainMasterDetailPage"
-             xmlns:pages="clr-namespace:DemoApplication.Views">
+             xmlns:pages="clr-namespace:DemoApplication.Views"
+             Title="Trang chủ" MasterBehavior="Popover" Icon="logo.png">
   <MasterDetailPage.Master>
-    <pages:MainMasterDetailPageMaster x:Name="MasterPage" />
-  </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
+    <!--<pages:MainMasterDetailPageMaster x:Name="MasterPage" />-->
+        <ContentPage Icon="logo.png"/>
+    </MasterDetailPage.Master>
+  <!--<MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
         <pages:MainMasterDetailPageDetail />
       </x:Arguments>
     </NavigationPage>
-  </MasterDetailPage.Detail>
+    <pages:MainMasterDetailPageDetail />
+   </MasterDetailPage.Detail>-->
 </MasterDetailPage>
